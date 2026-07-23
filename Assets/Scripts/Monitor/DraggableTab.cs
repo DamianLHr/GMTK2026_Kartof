@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.EventSystems; 
 
-public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class DraggableTab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     private RectTransform rectTransform;
     private Canvas canvas;
 
     private void Awake()
     {
-        rectTransform = transform.GetComponent<RectTransform>();
+        rectTransform = transform.parent.GetComponent<RectTransform>();
         
         canvas = GetComponentInParent<Canvas>();
         
@@ -20,7 +20,7 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        transform.SetAsLastSibling();
+        transform.parent.SetAsLastSibling();
     }
 
     public void OnDrag(PointerEventData eventData)
