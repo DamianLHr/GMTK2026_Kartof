@@ -22,3 +22,9 @@ public struct EnemySpawnEvent : IEvent { }
 public struct EnemyCullEvent : IEvent { public bool IsWaveEnemy; }
 public struct EnemyDeadEvent : IEvent { public bool IsWaveEnemy; }
 
+public struct CaptchaSolvedEvent : IEvent { }
+public struct PasswordCorrectCheckEvent : IEvent { }
+
+public struct FAcodeCorrectCheckEvent : IEvent { }
+public struct TwoFactorSubmitEvent : IEvent { public int Code; }
+

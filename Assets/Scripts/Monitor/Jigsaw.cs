@@ -3,9 +3,9 @@ using UnityEngine;
 public class Jigsaw : MonoBehaviour
 {
     [SerializeField] private GameObject[] jigsawPrefab;
-    public float distanceThreshold = 350f; 
+    public float distanceThreshold = 350f;
     public float spawnRadius = 100f;
-    
+
     private GameObject[] jigsaws;
     private bool isComplete = false;
 
@@ -13,12 +13,12 @@ public class Jigsaw : MonoBehaviour
     {
         jigsaws = new GameObject[4];
         int randomJigsaw = Random.Range(0, 4);
-        for(int i = 0; i < jigsaws.Length; i++)
+        for (int i = 0; i < jigsaws.Length; i++)
         {
             Vector2 randomOffset = Random.insideUnitCircle * spawnRadius;
 
-            GameObject spawnedJigsaw = Instantiate(jigsawPrefab[randomJigsaw + i*4], transform);
-            
+            GameObject spawnedJigsaw = Instantiate(jigsawPrefab[randomJigsaw + i * 4], transform);
+
             spawnedJigsaw.transform.localPosition = randomOffset;
 
             jigsaws[i] = spawnedJigsaw;
@@ -38,7 +38,7 @@ public class Jigsaw : MonoBehaviour
 
     private bool CheckIfPuzzleIsComplete()
     {
-        if (jigsaws == null || jigsaws.Length == 0) 
+        if (jigsaws == null || jigsaws.Length == 0)
         {
             return false;
         }
@@ -72,11 +72,12 @@ public class Jigsaw : MonoBehaviour
             }
         }
 
-        return true; 
+        return true;
     }
 
     private void JigsawComplete()
     {
         Debug.Log("Jigsaw Complete!");
+        EventBus<CaptchaSolvedEvent>.Raise(new CaptchaSolvedEvent());
     }
 }

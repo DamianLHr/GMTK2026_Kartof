@@ -9,7 +9,6 @@ public class LoginController : MonoBehaviour
     [SerializeField] private string Username;
     [SerializeField] private float letterDelay = 0.05f;
 
-    [SerializeField] private CanvasManager canvasManager; // Reference to the CanvasManager script
     [Header("Feedback")]
     [SerializeField] private TMP_Text feedbackText;
     [SerializeField] private string correctMessage = "Correct!";
@@ -30,7 +29,10 @@ public class LoginController : MonoBehaviour
 
         passwordField.onSubmit.AddListener(OnPasswordSubmit);
 
-        feedbackText.text = "";
+        if (feedbackText != null)
+        {
+            feedbackText.text = "";
+        }
     }
 
     private void OnEnable()
@@ -41,7 +43,7 @@ public class LoginController : MonoBehaviour
     private IEnumerator TypeUsername()
     {
         usernameField.text = "";
-        passwordField.interactable = false; // lock password field while typing
+        passwordField.interactable = false;
 
         foreach (char c in Username)
         {
@@ -49,7 +51,7 @@ public class LoginController : MonoBehaviour
             yield return new WaitForSeconds(letterDelay);
         }
 
-        passwordField.interactable = true; // unlock once done
+        passwordField.interactable = true;
     }
 
     public void SetPassword(string password)
@@ -66,14 +68,17 @@ public class LoginController : MonoBehaviour
     {
         bool success = enteredValue == Password;
 
-        feedbackText.text = success ? correctMessage : incorrectMessage;
-        feedbackText.color = success ? correctColor : incorrectColor;
+        if (feedbackText != null)
+        {
+            feedbackText.text = success ? correctMessage : incorrectMessage;
+            feedbackText.color = success ? correctColor : incorrectColor;
+        }
 
         if (success)
         {
             Debug.Log("Login success");
-            passwordField.interactable = false; // lock input during the transition delay
-            StartCoroutine(GoToCaptchaAfterDelay());
+            passwordField.interactable = false;
+            StartCoroutine(RaisePasswordCorrectAfterDelay());
         }
         else
         {
@@ -83,14 +88,17 @@ public class LoginController : MonoBehaviour
         }
     }
 
-    private IEnumerator GoToCaptchaAfterDelay()
+    private IEnumerator RaisePasswordCorrectAfterDelay()
     {
         yield return new WaitForSeconds(successDelay);
-        canvasManager.changeCaptchaState();
+        EventBus<PasswordCorrectCheckEvent>.Raise(new PasswordCorrectCheckEvent());
     }
 
     private void OnDisable()
     {
-        feedbackText.text = "";
+        if (feedbackText != null)
+        {
+            feedbackText.text = "";
+        }
     }
 }
