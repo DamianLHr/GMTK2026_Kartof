@@ -30,8 +30,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3855181766905249399}
+  m_Children: []
   m_Father: {fileID: 1466777282639378087}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -89,6 +88,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a271cb6fbfb82b599ae8815f83dbb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  jigsawPrefab:
+  - {fileID: 3086934428169123908, guid: 489c2bde8b08fa049a60b0b95edd3919, type: 3}
+  - {fileID: 3086934428169123908, guid: e69be1ef5f9504ec19bb50fb2cac5db6, type: 3}
+  - {fileID: 3086934428169123908, guid: dbfe9894670b30bd1a2d38b93333ce5f, type: 3}
+  - {fileID: 3086934428169123908, guid: dc328e84b194f1633b9bf816d5ca44a9, type: 3}
+  - {fileID: 3086934428169123908, guid: 3877651d6588ed566b74b20016676a55, type: 3}
+  - {fileID: 3086934428169123908, guid: 45d77071b25ed5414bc5aa2f9963179b, type: 3}
+  - {fileID: 3086934428169123908, guid: 57ec5011a48d36d6d9b1a9f7f55d45b5, type: 3}
+  - {fileID: 3086934428169123908, guid: 6b5eeba78428eb9ca90ef8d2562b187a, type: 3}
+  - {fileID: 3086934428169123908, guid: 2619d1f42c45418d7958b18e97000800, type: 3}
+  - {fileID: 3086934428169123908, guid: bbb5287a0067b5670be8f5ef468fc6df, type: 3}
+  - {fileID: 3086934428169123908, guid: 9c79ce4950ebd24cb8833f9ded7114f5, type: 3}
+  - {fileID: 3086934428169123908, guid: d27112500744ed52ab0fc3f0057a806c, type: 3}
+  - {fileID: 3086934428169123908, guid: 9293c06e6be41e39d81364f6aaf97d47, type: 3}
+  - {fileID: 3086934428169123908, guid: 2c06e80ecf659273c866d8dcce834162, type: 3}
+  - {fileID: 3086934428169123908, guid: 4770541d135cf4918a45a8e57e20c462, type: 3}
+  - {fileID: 3086934428169123908, guid: 846ee193fe9f25ed180754725ba70c43, type: 3}
+  distanceThreshold: 400
+  spawnRadius: 100
 --- !u!1 &1574882788571777170
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,109 +497,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &7321726693867506877
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3855181766905249399}
-  - component: {fileID: 734000036727854840}
-  - component: {fileID: 5270804955560425211}
-  - component: {fileID: 6592926227125717190}
-  - component: {fileID: 79301338055557860}
-  m_Layer: 5
-  m_Name: Jigsaw1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &3855181766905249399
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7321726693867506877}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 180115220458587772}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: 231}
-  m_SizeDelta: {x: 400, y: 400}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &734000036727854840
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7321726693867506877}
-  m_CullTransparentMesh: 1
---- !u!114 &5270804955560425211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7321726693867506877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 537435862, guid: 3cbb753ae14ca95bb8558261c0c76090, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &6592926227125717190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7321726693867506877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8239a45fb10531be796bae3b3070857d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggableUI
---- !u!114 &79301338055557860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7321726693867506877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee3dcd97a9f21b0e9c7ea7a278ba8bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  rectTransform: {fileID: 3855181766905249399}
-  jigsawState: 0
 --- !u!1 &8810642677859067517
 GameObject:
   m_ObjectHideFlags: 0
