@@ -18,7 +18,7 @@ public class CanvasManager : MonoBehaviour
 
         // Activate the login screen and set the password when tab is instantiated
         changeLoginState();
-        loginState.GetComponent<LoginController>().SetPassword(Password);
+        loginState.transform.GetChild(1).GetComponent<LoginController>().SetPassword(Password);
     }
 
     public void changeLoginState()
