@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class FileManager : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class FileManager : MonoBehaviour
             {
                 textDisplay[i].text = specialText;
                 currentFiles[i].name = specialText;
+                CorrectFile fileScript = currentFiles[i].GetComponent<CorrectFile>();
+                currentFiles[i].GetComponent<Button>().onClick.AddListener(fileScript.Spawn);
             }
             else
             {
