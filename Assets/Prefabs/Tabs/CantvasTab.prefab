@@ -388,7 +388,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9003754015803421748}
         m_TargetAssemblyTypeName: TabButtons, Assembly-CSharp
         m_MethodName: Button_Close
         m_Mode: 1
