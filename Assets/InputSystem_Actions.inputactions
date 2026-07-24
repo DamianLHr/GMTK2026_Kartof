@@ -104,6 +104,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Advance",
+                    "type": "Button",
+                    "id": "63320a3c-80ef-45f0-877e-2007225ab6f5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -494,6 +503,7 @@
                 },
                 {
                     "name": "",
+<<<<<<< HEAD
                     "id": "c817cbd0-c863-4285-9723-be45257d2d99",
                     "path": "<Keyboard>/p",
                     "interactions": "",
@@ -511,6 +521,14 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "DebugEvent",
+=======
+                    "id": "61d7abbf-65de-4c2d-a266-65ddcd637470",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Advance",
+>>>>>>> 03acb175418663b566e02f9e5b66c36cc3edb74f
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
