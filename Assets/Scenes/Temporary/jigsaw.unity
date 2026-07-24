@@ -1171,8 +1171,8 @@ MonoBehaviour:
   - {fileID: 2218509861225729223, guid: 235ccce4523b1fee3a94c64027ddac4b, type: 3}
   - {fileID: 2218509861225729223, guid: 7f27125edb233b1c7bd7f83a092bc3ec, type: 3}
   - {fileID: 2218509861225729223, guid: 3ea2a624696f455338d1b6a0f2d79120, type: 3}
-  x: 40fcffffc0030000
-  y: e4fdffff1c020000
+  x: 30fdffffd0020000
+  y: 98feffff68010000
   minSpawnTime: 5
   maxSpawnTime: 10
 --- !u!114 &1144015056
