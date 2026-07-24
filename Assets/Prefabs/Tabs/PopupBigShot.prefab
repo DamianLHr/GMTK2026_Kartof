@@ -218,7 +218,6 @@ GameObject:
   - component: {fileID: 1199365686988311977}
   - component: {fileID: 1519796320238926141}
   - component: {fileID: 5679381872635788686}
-  - component: {fileID: 6355563158149461422}
   m_Layer: 5
   m_Name: Window
   m_TagString: Untagged
@@ -286,18 +285,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6355563158149461422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183521613518065692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15e4763195c8e16378c3261d403cb710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DraggableUI
 --- !u!1 &1446779075770311446
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +416,7 @@ GameObject:
   - component: {fileID: 1466777282639378087}
   - component: {fileID: 259018901507859793}
   - component: {fileID: 7454688548236329577}
+  - component: {fileID: 1813683517170530390}
   m_Layer: 5
   m_Name: PopupBigShot
   m_TagString: Untagged
@@ -477,6 +465,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b034c504816641abba9e75bc1cf6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &1813683517170530390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2218509861225729223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8239a45fb10531be796bae3b3070857d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableUI
 --- !u!1 &2495992684427566143
 GameObject:
   m_ObjectHideFlags: 0
