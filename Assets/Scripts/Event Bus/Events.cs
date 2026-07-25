@@ -33,3 +33,5 @@ public struct FAcodeCorrectCheckEvent : IEvent { }
 public struct TwoFactorSubmitEvent : IEvent { public int Code; }
 
 public struct IntegralTaskCompleteEvent : IEvent { }
+
+public struct FAnumberChosenEvent : IEvent { public int Number; }
