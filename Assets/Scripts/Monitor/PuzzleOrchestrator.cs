@@ -10,12 +10,15 @@ public class PuzzleOrchestrator : MonoBehaviour
     public static int FACode;
     [SerializeField] private TextMeshProUGUI routerIDText;
     [SerializeField] private TextMeshProUGUI canvasPasswordText;
-    
+
+    public static bool correctFile;
     public static bool FACodeCorrect;
     public static bool PasswordCorrect;
     public static bool RouterIDCorrect;
     public static bool CaptchaCorrect;
     public static bool Submitted;
+
+    private bool hasTriggeredWin = false;
     
     private void Awake()
     {
@@ -48,6 +51,16 @@ public class PuzzleOrchestrator : MonoBehaviour
         EventBus<PlayerDeadEvent>.Register(playerDead);
     }
 
+    // I know there were better ways of doing it by calling events... but I didn't know when I started writing this and I am tired :(
+    private void Update()
+    {
+        if (Submitted && !hasTriggeredWin)
+        {
+            hasTriggeredWin = true;
+            EventBus<PlayerWonEvent>.Raise(new PlayerWonEvent());
+        }
+    }
+
     private void Won()
     {
         LevelLoader.Instance.LoadLevel("Victory Screen");
@@ -63,5 +76,4 @@ public class PuzzleOrchestrator : MonoBehaviour
         EventBus<PlayerWonEvent>.Deregister(playerWon);
         EventBus<PlayerDeadEvent>.Deregister(playerDead);
     }
-
 }

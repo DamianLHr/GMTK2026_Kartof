@@ -9,8 +9,8 @@ public class CorrectFile : MonoBehaviour
         if (hasSpawned) 
             return;
 
-        hasSpawned = true; 
+        hasSpawned = true;
 
-        Debug.Log("Correct File!");
+        PuzzleOrchestrator.correctFile = true;
     }
 }

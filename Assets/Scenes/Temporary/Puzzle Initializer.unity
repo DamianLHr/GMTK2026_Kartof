@@ -9297,8 +9297,8 @@ GameObject:
   - component: {fileID: 1355609280}
   - component: {fileID: 1355609283}
   - component: {fileID: 1355609282}
-  - component: {fileID: 1355609281}
   - component: {fileID: 1355609284}
+  - component: {fileID: 1355609285}
   m_Layer: 6
   m_Name: StickyNoteWifi
   m_TagString: Untagged
@@ -9322,28 +9322,6 @@ Transform:
   - {fileID: 405582366}
   m_Father: {fileID: 352703511}
   m_LocalEulerAnglesHint: {x: 0, y: -23.229, z: 0}
---- !u!64 &1355609281
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355609279}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1355609282
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9416,6 +9394,27 @@ MonoBehaviour:
   uiTarget: {fileID: 746024930}
   movementController: {fileID: 556280412}
   manageCursor: 1
+--- !u!65 &1355609285
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355609279}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 21.86, y: 1.68, z: 17.53}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1358541607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9780,8 +9779,8 @@ GameObject:
   - component: {fileID: 1560102920}
   - component: {fileID: 1560102924}
   - component: {fileID: 1560102923}
-  - component: {fileID: 1560102922}
   - component: {fileID: 1560102921}
+  - component: {fileID: 1560102925}
   m_Layer: 6
   m_Name: StickyNoteLogin
   m_TagString: Untagged
@@ -9820,28 +9819,6 @@ MonoBehaviour:
   uiTarget: {fileID: 1140794425}
   movementController: {fileID: 556280412}
   manageCursor: 1
---- !u!64 &1560102922
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560102919}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1560102923
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9899,6 +9876,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560102919}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1560102925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560102919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 21.86, y: 1.68, z: 17.53}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1582648776
 GameObject:
   m_ObjectHideFlags: 0
