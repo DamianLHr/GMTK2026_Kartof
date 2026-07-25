@@ -5343,8 +5343,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Im interacting it
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: adcaf59dbb64372ce94237849edaa861, type: 2}
+  m_sharedMaterial: {fileID: -1217290976114334607, guid: adcaf59dbb64372ce94237849edaa861, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5376,7 +5376,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -5438,7 +5438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &395842072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6029,8 +6029,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FocusInteract
   focusPoint: {fileID: 666398442}
   glideDuration: 0.6
+  exitSwapProgress: 0.3
   targetCamera: {fileID: 1173379280}
   movementController: {fileID: 1968373177}
+  renderTextureManager: {fileID: 0}
 --- !u!65 &1164280065
 BoxCollider:
   m_ObjectHideFlags: 0
