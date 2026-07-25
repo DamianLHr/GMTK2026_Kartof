@@ -17,38 +17,46 @@ public class PhoneUIController : MonoBehaviour
 
     [Header("Code Panel")]
     [SerializeField] private GameObject codePanel;                  // covers the phone screen
-    
     [SerializeField] private GameObject timerPanel;
     [SerializeField] private Button[] codeButtons;                  // exactly 3
     [SerializeField] private TextMeshProUGUI[] codeButtonTexts;     // matching, index-for-index
 
+    [Header("Icon Control")]
+
+    [SerializeField] private GameObject WideEyesCatIcon;
+    [SerializeField] private GameObject BlinkingCatIcon;
+
+    private float frame1Duration = 2.5f;
+    private float frame2Duration = 0.2f;
+    private Coroutine blinkingAnimation;
+    private bool isAnimating = false;
     private bool isPhoneOpen = false;
     private Coroutine slideRoutine;
     private int correctNumber = 0;
     private bool triggered2FA = false;
 
-    EventBinding<Phone2FAEvent> phone2FAeventBinding;
+    EventBinding<FAnumberChosenEvent> phone2FAeventBinding;
     EventBinding<correctNumberEvent> correctNumber2FAEventBinding;
 
     private void Awake()
     {   
         timerPanel.SetActive(false);
         codePanel.SetActive(false);
-        phonePanel.anchoredPosition = hiddenPosition; // NEW — force hidden on scene start
+        phonePanel.anchoredPosition = hiddenPosition; // Hidden phone on Scene Start
 
     }
-
+public struct FAnumberChosenEvent : IEvent { public int Number; }
     private void OnEnable()
     {
-        phone2FAeventBinding = new EventBinding<Phone2FAEvent>(e => handle2FAEvent(e.correctNumber));  //Event that provides the phone with the number generated for the F2A
-        EventBus<Phone2FAEvent>.Register(phone2FAeventBinding);
+        phone2FAeventBinding = new EventBinding<FAnumberChosenEvent>(e => handle2FAEvent(e.Number));  //Event that provides the phone with the number generated for the F2A
+        EventBus<FAnumberChosenEvent>.Register(phone2FAeventBinding);
         correctNumber2FAEventBinding = new EventBinding<correctNumberEvent>(() => Debug.Log("correct number chosen")); //Debugging, might be useful later
         EventBus<correctNumberEvent>.Register(correctNumber2FAEventBinding);
     }
 
     private void OnDisable()
     {   
-        EventBus<Phone2FAEvent>.Deregister(phone2FAeventBinding);
+        EventBus<FAnumberChosenEvent>.Deregister(phone2FAeventBinding);
         EventBus<correctNumberEvent>.Deregister(correctNumber2FAEventBinding);
     }
 
@@ -59,6 +67,9 @@ public class PhoneUIController : MonoBehaviour
         if (slideRoutine != null) StopCoroutine(slideRoutine);
         slideRoutine = StartCoroutine(SlidePhone(show ? shownPosition : hiddenPosition));
         isPhoneOpen = show;
+        WideEyesCatIcon.SetActive(true);
+        BlinkingCatIcon.SetActive(false);
+        SetAnimationState(!isAnimating);
 
         // Toggle cursor visibility and lock state
         SetCursorState(false);
@@ -111,7 +122,7 @@ public class PhoneUIController : MonoBehaviour
     {
         if (number == correctNumber)
         {
-            
+            EventBus<TwoFactorSubmitEvent>.Raise(new TwoFactorSubmitEvent{Code = correctNumber});
             Debug.Log("Correct number was chosen");
             HideCodePanel();
             triggered2FA = false;
@@ -206,5 +217,33 @@ public class PhoneUIController : MonoBehaviour
         if (btn != null) btn.interactable = state;
     }
 }
+
+    private void SetAnimationState(bool state)
+    {
+        if (isAnimating == state) return;
+
+        isAnimating = state;
+
+        if (isAnimating)
+        {
+            blinkingAnimation = StartCoroutine(frameSwitch());
+        } else if (blinkingAnimation != null)
+        {
+            StopCoroutine(frameSwitch());
+        }
+    }
+
+    private IEnumerator frameSwitch()
+    {
+        while (isAnimating)
+        {
+            WideEyesCatIcon.SetActive(true);
+            BlinkingCatIcon.SetActive(false);
+            yield return new WaitForSeconds(frame1Duration);
+            BlinkingCatIcon.SetActive(true);
+            WideEyesCatIcon.SetActive(false);
+            yield return new WaitForSeconds(frame2Duration);
+        }
+    }
 
 }
