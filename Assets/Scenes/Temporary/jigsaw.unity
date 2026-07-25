@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 296312988}
   - component: {fileID: 296312989}
   m_Layer: 5
-  m_Name: Icon (1)
+  m_Name: Connect Internet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84858d51cacfa25ef92db1a19763a694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Icon
-  tabPrefab: {fileID: 2218509861225729223, guid: d6d1635c47238dc28b5b327d803890c3, type: 3}
+  tabPrefab: {fileID: 2218509861225729223, guid: 78711d09fce69e092969756b6f0433c5, type: 3}
   lowPriorityGroup: {fileID: 858035720}
 --- !u!114 &300156625
 MonoBehaviour:
@@ -1686,7 +1686,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 600337556, guid: f4e1410b02c20de6984f9d4e712b6be7, type: 3}
+  m_Sprite: {fileID: -530960069, guid: b3316619e8bf9a0e5882b046b3346694, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1972,8 +1972,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 698969459}
-  - {fileID: 296312985}
   - {fileID: 1699545679}
+  - {fileID: 296312985}
   m_Father: {fileID: 858035721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

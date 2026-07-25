@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final/Victory Screen.unity
     guid: 52f01c3ff53f3b94380627784749a85e
+  - enabled: 1
+    path: Assets/Scenes/Minigames/ConnectInternet.unity
+    guid: a6846307ed8308623964d7818236917f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
