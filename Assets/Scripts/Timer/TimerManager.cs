@@ -4,7 +4,7 @@ using TMPro;
 
 public class TimerManager : MonoBehaviour
 {
-    [Header("Difficulty (data-driven, not hardcoded)")]
+    [Header("Difficulty")]
     [SerializeField] private DifficultyProfile difficulty;       // Chill / Normal / Crunch asset
     [SerializeField] private float fallbackSecondsPerCount = 1f;  // used only when no profile is assigned
 
@@ -94,7 +94,7 @@ public class TimerManager : MonoBehaviour
         Running = false;
         RefreshLabel();
         onTimeUp?.Invoke();
-        // Prefer the shared bus? -> EventBus<PlayerDeadEvent>.Raise(new PlayerDeadEvent());
+        EventBus<PlayerDeadEvent>.Raise(new PlayerDeadEvent());
     }
 
     private void RefreshLabel()

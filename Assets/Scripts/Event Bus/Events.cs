@@ -28,3 +28,4 @@ public struct PasswordCorrectCheckEvent : IEvent { }
 public struct FAcodeCorrectCheckEvent : IEvent { }
 public struct TwoFactorSubmitEvent : IEvent { public int Code; }
 
+public struct IntegralTaskCompleteEvent : IEvent { }
