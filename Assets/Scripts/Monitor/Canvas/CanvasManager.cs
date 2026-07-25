@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
@@ -6,6 +7,9 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject loginState;
     [SerializeField] private GameObject captchaState;
     [SerializeField] private GameObject FAState;
+    [SerializeField] private GameObject submitState;
+
+    [SerializeField] private float stateChangeDelay = 0.5f;
 
     private Boolean loggedIn = false;
     public string Password; // to be set from big manager;
@@ -55,28 +59,56 @@ public class CanvasManager : MonoBehaviour
     private void OnFACodeCorrect()
     {
         Debug.Log("CanvasManager: FA code correct, proceeding.");
-        // next state call goes here once you have one (e.g. assignment list)
+        changeSubmitState();
     }
 
-   
     public void changeLoginState()
     {
-        loginState.SetActive(true);
-        captchaState.SetActive(false);
-        FAState.SetActive(false);
+        StartCoroutine(DelayedChange(() =>
+        {
+            loginState.SetActive(true);
+            captchaState.SetActive(false);
+            FAState.SetActive(false);
+            submitState.SetActive(false);
+        }));
     }
 
     public void changeCaptchaState()
     {
-        loginState.SetActive(false);
-        captchaState.SetActive(true);
-        FAState.SetActive(false);
+        StartCoroutine(DelayedChange(() =>
+        {
+            loginState.SetActive(false);
+            captchaState.SetActive(true);
+            FAState.SetActive(false);
+            submitState.SetActive(false);
+        }));
     }
 
     public void changeFAState()
     {
-        loginState.SetActive(false);
-        captchaState.SetActive(false);
-        FAState.SetActive(true);
+        StartCoroutine(DelayedChange(() =>
+        {
+            loginState.SetActive(false);
+            captchaState.SetActive(false);
+            FAState.SetActive(true);
+            submitState.SetActive(false);
+        }));
+    }
+
+    public void changeSubmitState()
+    {
+        StartCoroutine(DelayedChange(() =>
+        {
+            loginState.SetActive(false);
+            captchaState.SetActive(false);
+            FAState.SetActive(false);
+            submitState.SetActive(true);
+        }));
+    }
+
+    private IEnumerator DelayedChange(Action applyChange)
+    {
+        yield return new WaitForSeconds(stateChangeDelay);
+        applyChange.Invoke();
     }
 }

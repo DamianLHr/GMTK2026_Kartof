@@ -369,7 +369,6 @@ MonoBehaviour:
   passwordField: {fileID: 0}
   Username: smartie.pants@student.tuffUni.be
   letterDelay: 0.05
-  canvasManager: {fileID: 0}
   feedbackText: {fileID: 0}
   correctMessage: Correct!
   incorrectMessage: Incorrect password, try again.
@@ -593,7 +592,6 @@ MonoBehaviour:
   passwordField: {fileID: 0}
   Username: smartie.pants@student.tuffUni.be
   letterDelay: 0.05
-  canvasManager: {fileID: 0}
   feedbackText: {fileID: 0}
   correctMessage: Correct!
   incorrectMessage: Incorrect password, try again.
@@ -2079,6 +2077,8 @@ MonoBehaviour:
   loginState: {fileID: 6846545932691981747}
   captchaState: {fileID: 672850391885967235}
   FAState: {fileID: 7379576502467021443}
+  submitState: {fileID: 815501721859230105}
+  stateChangeDelay: 0.5
   Password: password123
   FAcode: 67
 --- !u!1 &5111567061745399892
@@ -2922,7 +2922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: NUMBER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2956,7 +2956,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3276,7 +3276,6 @@ MonoBehaviour:
   passwordField: {fileID: 3329784650396191621}
   Username: smartie.pants@student.tuffUni.be
   letterDelay: 0.05
-  canvasManager: {fileID: 2902956613353190399}
   feedbackText: {fileID: 966199140508280003}
   correctMessage: Correct!
   incorrectMessage: Incorrect password, try again.
