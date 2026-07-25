@@ -539,7 +539,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3898929930073251833}
   - component: {fileID: 4860578112026398139}
-  - component: {fileID: 3633346950606533678}
   - component: {fileID: 4773914968591627576}
   m_Layer: 5
   m_Name: Content
@@ -576,28 +575,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598621931663976710}
   m_CullTransparentMesh: 1
---- !u!114 &3633346950606533678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1598621931663976710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a549759ada17c543aacc643ef1ae70e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoginController
-  usernameField: {fileID: 0}
-  passwordField: {fileID: 0}
-  Username: smartie.pants@student.tuffUni.be
-  letterDelay: 0.05
-  feedbackText: {fileID: 0}
-  correctMessage: Correct!
-  incorrectMessage: Incorrect password, try again.
-  correctColor: {r: 0, g: 1, b: 0, a: 1}
-  incorrectColor: {r: 1, g: 0, b: 0, a: 1}
-  successDelay: 1
 --- !u!114 &4773914968591627576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,7 +2056,7 @@ MonoBehaviour:
   FAState: {fileID: 7379576502467021443}
   submitState: {fileID: 815501721859230105}
   stateChangeDelay: 0.5
-  Password: password123
+  Password: password
   FAcode: 67
 --- !u!1 &5111567061745399892
 GameObject:
@@ -2924,7 +2901,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: NUMBER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: adcaf59dbb64372ce94237849edaa861, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2991,7 +2968,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5961469637178038901

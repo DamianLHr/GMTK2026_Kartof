@@ -35,6 +35,7 @@ public class FileManager : MonoBehaviour
             {
                 textDisplay[i].text = specialText;
                 currentFiles[i].name = specialText;
+                currentFiles[i].GetComponent<SpawnError>().enabled = false;
                 CorrectFile fileScript = currentFiles[i].GetComponent<CorrectFile>();
                 currentFiles[i].GetComponent<Button>().onClick.AddListener(fileScript.Spawn);
             }

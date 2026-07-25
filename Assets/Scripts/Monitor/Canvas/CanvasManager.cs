@@ -10,6 +10,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject submitState;
 
     [SerializeField] private float stateChangeDelay = 0.5f;
+    private float instantChange = 0;
 
     private Boolean loggedIn = false;
     public string Password; // to be set from big manager;
@@ -21,9 +22,13 @@ public class CanvasManager : MonoBehaviour
 
     private void Awake()
     {
-        changeLoginState();
-        loginState.GetComponent<LoginController>().SetPassword(Password);
-        FAState.GetComponent<FAController>().SetCode(FAcode);
+        loginState.GetComponent<LoginController>().SetPassword(PuzzleOrchestrator.CanvasPassword);
+        FAState.GetComponent<FAController>().SetCode(PuzzleOrchestrator.FACode);
+        
+        if(PuzzleOrchestrator.FACodeCorrect) { changeSubmitState(instantChange); }
+        else if(PuzzleOrchestrator.CaptchaCorrect) { changeFAState(instantChange); }
+        else if(PuzzleOrchestrator.PasswordCorrect) { changeCaptchaState(instantChange); }
+        else { changeLoginState(instantChange); }
     }
 
     private void OnEnable()
@@ -47,22 +52,29 @@ public class CanvasManager : MonoBehaviour
 
     private void OnPasswordCorrect()
     {
+        PuzzleOrchestrator.PasswordCorrect = true;
         loggedIn = true;
-        changeCaptchaState();
+        changeCaptchaState(stateChangeDelay);
     }
 
     private void OnCaptchaSolved()
     {
-        changeFAState();
+        PuzzleOrchestrator.CaptchaCorrect = true;
+        changeFAState(stateChangeDelay);
     }
 
     private void OnFACodeCorrect()
     {
-        Debug.Log("CanvasManager: FA code correct, proceeding.");
-        changeSubmitState();
+        PuzzleOrchestrator.FACodeCorrect = true;
+        changeSubmitState(stateChangeDelay);
     }
 
-    public void changeLoginState()
+    private void Submit()
+    {
+        PuzzleOrchestrator.Submitted = true;
+    }
+
+    public void changeLoginState(float seconds)
     {
         StartCoroutine(DelayedChange(() =>
         {
@@ -70,10 +82,10 @@ public class CanvasManager : MonoBehaviour
             captchaState.SetActive(false);
             FAState.SetActive(false);
             submitState.SetActive(false);
-        }));
+        }, seconds));
     }
 
-    public void changeCaptchaState()
+    public void changeCaptchaState(float seconds)
     {
         StartCoroutine(DelayedChange(() =>
         {
@@ -81,10 +93,10 @@ public class CanvasManager : MonoBehaviour
             captchaState.SetActive(true);
             FAState.SetActive(false);
             submitState.SetActive(false);
-        }));
+        }, seconds));
     }
 
-    public void changeFAState()
+    public void changeFAState(float seconds)
     {
         StartCoroutine(DelayedChange(() =>
         {
@@ -92,10 +104,10 @@ public class CanvasManager : MonoBehaviour
             captchaState.SetActive(false);
             FAState.SetActive(true);
             submitState.SetActive(false);
-        }));
+        }, seconds));
     }
 
-    public void changeSubmitState()
+    public void changeSubmitState(float seconds)
     {
         StartCoroutine(DelayedChange(() =>
         {
@@ -103,12 +115,12 @@ public class CanvasManager : MonoBehaviour
             captchaState.SetActive(false);
             FAState.SetActive(false);
             submitState.SetActive(true);
-        }));
+        }, seconds));
     }
 
-    private IEnumerator DelayedChange(Action applyChange)
+    private IEnumerator DelayedChange(Action applyChange, float seconds)
     {
-        yield return new WaitForSeconds(stateChangeDelay);
+        yield return new WaitForSeconds(seconds);
         applyChange.Invoke();
     }
 }
