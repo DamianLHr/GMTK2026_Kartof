@@ -69,11 +69,6 @@ public class CanvasManager : MonoBehaviour
         changeSubmitState(stateChangeDelay);
     }
 
-    private void Submit()
-    {
-        PuzzleOrchestrator.Submitted = true;
-    }
-
     public void changeLoginState(float seconds)
     {
         StartCoroutine(DelayedChange(() =>

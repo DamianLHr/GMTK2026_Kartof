@@ -45,7 +45,6 @@ public class PhoneUIController : MonoBehaviour
         phonePanel.anchoredPosition = hiddenPosition; // Hidden phone on Scene Start
 
     }
-public struct FAnumberChosenEvent : IEvent { public int Number; }
     private void OnEnable()
     {
         phone2FAeventBinding = new EventBinding<FAnumberChosenEvent>(e => handle2FAEvent(e.Number));  //Event that provides the phone with the number generated for the F2A
@@ -72,7 +71,7 @@ public struct FAnumberChosenEvent : IEvent { public int Number; }
         SetAnimationState(!isAnimating);
 
         // Toggle cursor visibility and lock state
-        SetCursorState(false);
+        SetCursorState(show);
 
         //if (!show) HideCodePanel();
         if (show && triggered2FA)
@@ -97,6 +96,8 @@ public struct FAnumberChosenEvent : IEvent { public int Number; }
 
     private void HandleShowCodePanel()
     {
+        Debug.Log("Numbers recieved");
+
         if (!isPhoneOpen) return; // same rule the notification had — only while the phone is up
         SetCursorState(true);
 
@@ -126,7 +127,7 @@ public struct FAnumberChosenEvent : IEvent { public int Number; }
             Debug.Log("Correct number was chosen");
             HideCodePanel();
             triggered2FA = false;
-            SetCursorState(false);
+            //SetCursorState(false);
         }
         else
         {

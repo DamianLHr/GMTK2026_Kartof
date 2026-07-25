@@ -37,13 +37,31 @@ public class PuzzleOrchestrator : MonoBehaviour
         return new string(result);
     }
 
-    private void Update()
+    private EventBinding<PlayerWonEvent> playerWon;
+    private EventBinding<PlayerDeadEvent> playerDead;
+
+    private void OnEnable()
     {
-        if (Submitted)
-        {
-            //This is what happens if you manage to submit the assignment/win game
-            Debug.Log("YOU WON!!! YIPPEEE!!!");
-        }
+        playerWon = new EventBinding<PlayerWonEvent>(Won);
+        playerDead = new EventBinding<PlayerDeadEvent>(Lost); 
+        EventBus<PlayerWonEvent>.Register(playerWon);
+        EventBus<PlayerDeadEvent>.Register(playerDead);
     }
-    
+
+    private void Won()
+    {
+        LevelLoader.Instance.LoadLevel("Victory Screen");
+    }
+
+    private void Lost()
+    {
+        LevelLoader.Instance.LoadLevel("Loss Screen");
+    }
+
+    private void OnDisable()
+    {
+        EventBus<PlayerWonEvent>.Deregister(playerWon);
+        EventBus<PlayerDeadEvent>.Deregister(playerDead);
+    }
+
 }
