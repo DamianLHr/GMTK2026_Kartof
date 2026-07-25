@@ -14,6 +14,10 @@ public struct DamageReceivedEvent : IEvent { public float Amount; public bool Is
 public struct RageLevelAdvancedEvent : IEvent { public int Level; }
 public struct RageChangedEvent : IEvent { public float NormalizedRage; }
 
+public struct Phone2FAEvent : IEvent{ public int correctNumber; }
+
+public struct correctNumberEvent : IEvent{};
+
 public struct PlayerDeadEvent : IEvent { }
 
 public struct PlayerWonEvent : IEvent { }
@@ -28,3 +32,4 @@ public struct PasswordCorrectCheckEvent : IEvent { }
 public struct FAcodeCorrectCheckEvent : IEvent { }
 public struct TwoFactorSubmitEvent : IEvent { public int Code; }
 
+public struct IntegralTaskCompleteEvent : IEvent { }
