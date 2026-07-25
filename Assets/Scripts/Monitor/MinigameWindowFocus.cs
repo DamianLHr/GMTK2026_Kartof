@@ -15,6 +15,11 @@ public class MinigameWindowFocus : MonoBehaviour, IPointerEnterHandler, IPointer
     { 
         EndGates.OnMinigameFinished += HandleMinigameFinished;
     }
+
+    private void OnDisable()
+    {
+        EndGates.OnMinigameFinished -= HandleMinigameFinished;
+    }
     
     private void Start()
     {
@@ -44,6 +49,16 @@ public class MinigameWindowFocus : MonoBehaviour, IPointerEnterHandler, IPointer
         // - Unload the minigame scene: SceneManager.UnloadSceneAsync(minigameSceneName);
         // - Close the window UI: gameObject.SetActive(false);
         // - Give the player money/points in the main OS.
+    }
+    
+    public void UnloadMinigameScene()
+    {
+        Scene sceneToUnload = SceneManager.GetSceneByName(minigameSceneName);
+        if (sceneToUnload.isLoaded)
+        {
+            SceneManager.UnloadSceneAsync(minigameSceneName);
+            playerInput = null;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
