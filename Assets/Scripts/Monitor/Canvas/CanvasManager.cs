@@ -52,7 +52,8 @@ public class CanvasManager : MonoBehaviour
     }
 
     private void OnCaptchaSolved()
-    {
+    {   
+        
         changeFAState();
     }
 
