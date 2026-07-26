@@ -35,6 +35,15 @@ public class Cat : MonoBehaviour, IInteractable
 
     [Header("Cursor Settings")]
     [SerializeField] private bool manageCursor = true;
+
+    [SerializeField] private SFXConfiguration catPickUp1;
+    [SerializeField] private SFXConfiguration catPickUp2;
+
+    [SerializeField] private SFXConfiguration catPickUp3;
+
+    [SerializeField] private SFXConfiguration catPickUp4;
+
+    [SerializeField] private SFXConfiguration catToHeaven;
     
     private bool isActive = false;
     private bool isAscending = false;
@@ -68,6 +77,7 @@ public class Cat : MonoBehaviour, IInteractable
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
         catCollider.enabled = false;
         uiTarget.SetActive(true);
+
         if (player != null)
         {
             lastRotation = player.transform.rotation;
@@ -76,6 +86,20 @@ public class Cat : MonoBehaviour, IInteractable
         else
         {
             Debug.LogWarning("Player reference is missing on the Cat script! Rotation tracking won't work.");
+        }
+        int rand = UnityEngine.Random.Range(0, 100);
+        if(rand < 5)
+        {
+            AudioManager.Instance.PlaySFX(catPickUp1, 1f);
+        } else if (rand < 25)
+        {
+            AudioManager.Instance.PlaySFX(catPickUp2, 1f);
+        } else if (rand < 60)
+        {
+            AudioManager.Instance.PlaySFX(catPickUp3, 1f);
+        } else
+        {
+            AudioManager.Instance.PlaySFX(catPickUp4, 1f);
         }
     }
     
@@ -128,6 +152,7 @@ public class Cat : MonoBehaviour, IInteractable
         floatingCat.transform.parent = transform.parent;
         collider.enabled = true;
         uiTarget.SetActive(false);
+        AudioManager.Instance.PlaySFX(catToHeaven, 1f);
     }
 
     
