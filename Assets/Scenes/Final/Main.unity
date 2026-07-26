@@ -21703,6 +21703,7 @@ GameObject:
   - component: {fileID: 1962040196}
   - component: {fileID: 1962040198}
   - component: {fileID: 1962040195}
+  - component: {fileID: 1962040199}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -21829,6 +21830,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962040194}
   m_Enabled: 1
+--- !u!114 &1962040199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962040194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d8f84c71a54934cbea7285b343e5b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AspectRatio
 --- !u!4 &1993604346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -163066445757010894, guid: c357b5bdd557d5143a8fc9845a413797, type: 3}
@@ -22342,23 +22355,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22390,11 +22403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 150
+      value: 183
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 200
+      value: 205
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -22407,6 +22420,10 @@ PrefabInstance:
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1745479742792185207, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_Name
