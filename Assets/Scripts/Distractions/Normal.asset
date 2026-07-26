@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d928a1db269d84682e000fce3f4351, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyProfile
-  secondsPerCount: 1
-  distractionCount: 5
-  distractionInterval: {x: 6, y: 12}
-  distractionIntensity: 0.361
+  secondsPerCount: 2
+  distractionCount: 3
+  distractionInterval: {x: 10, y: 15}
+  distractionIntensity: 0.247

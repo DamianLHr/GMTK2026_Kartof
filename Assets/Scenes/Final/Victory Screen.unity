@@ -119,6 +119,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &142380949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 142380951}
+  - component: {fileID: 142380950}
+  m_Layer: 0
+  m_Name: FreeMouseOnStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &142380950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142380949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648ab65538afbb246a3cea6febd4bf4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FreeMouseOnStart
+--- !u!4 &142380951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142380949}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.27316, y: 0, z: -75.7579}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &251448023
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,73 +312,73 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Team Kartof:
 
-    
 
-    Programming - David (Davidd), Damyan (damianhr),
-    Dan (Midas5665), Vlad (Bunger)
 
-    
+    Programming - David (Davidd), Damyan (damianhr), Dan
+    (Midas5665), Vlad (Bunger)
+
+
 
     2D Art - Marte (smarty123)
 
-    
 
-    Pixel
-    Art - Vlad (Bunger)
 
-    
+    Pixel Art
+    - Vlad (Bunger)
+
+
 
     UI Design - Vlad (Bunger)
 
-    
 
-    Art Posters
-    - Alexia (ssvuet)
 
-    
+    Art Posters - Alexia
+    (ssvuet)
+
+
 
     3D Models - Dan (Midas5665), Marte (smarty123)
 
-    
 
-    3D
-    Rigging and Animations - Marte (smarty123)
 
-    
+    3D Rigging
+    and Animations - Marte (smarty123)
+
+
 
     Sound Design - Dan (Midas5665)
 
-    
+
 
     CREDITS
     3RD PARTY ASSETS:
 
-    
+
 
     Fonts:
 
-    
+
 
     Pixelify Sans - Stefie Justprince
 
-    
+
 
     Pico-8
 
-    
+
 
     Music:
 
-    
+
 
     The
     Chase Begins - MMAudio
 
-    
+
 
     Sound Effects:
 
-    
+
 
     freesound_community '
   m_isRightToLeft: 0
@@ -1156,6 +1200,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990015915}
   m_CullTransparentMesh: 1
+--- !u!1 &1191421842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191421844}
+  - component: {fileID: 1191421843}
+  m_Layer: 0
+  m_Name: LevelLoaderButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1191421843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191421842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae998eb63184c87438bfe299b8a703bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelLoaderButton
+--- !u!4 &1191421844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191421842}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.27316, y: 0, z: -75.7579}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1587995964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,9 +1406,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2083414993}
-        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: LoadLevel
+      - m_Target: {fileID: 1191421843}
+        m_TargetAssemblyTypeName: LevelLoaderButton, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1658,17 +1746,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deaac39e8abfa6641894a345a48b4299, type: 3}
---- !u!114 &2083414993 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3835374161601052432, guid: deaac39e8abfa6641894a345a48b4299, type: 3}
-  m_PrefabInstance: {fileID: 2083414991}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05843567c641e65419b18e326eb14049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelLoader
 --- !u!1 &2126863767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,8 +1829,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2083414993}
-        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+      - m_Target: {fileID: 1191421843}
+        m_TargetAssemblyTypeName: LevelLoaderButton, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -1812,3 +1889,5 @@ SceneRoots:
   - {fileID: 1587995967}
   - {fileID: 1918699691}
   - {fileID: 2083414991}
+  - {fileID: 142380951}
+  - {fileID: 1191421844}

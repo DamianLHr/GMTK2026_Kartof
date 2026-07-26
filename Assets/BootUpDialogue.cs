@@ -6,6 +6,8 @@ public class BootUpDialogue : MonoBehaviour
     private bool spoken = false;
     private void Update()
     {
+        Debug.Log("hello");
+
         if (FocusInteract.focused && !spoken)
         {
             spoken = true;
