@@ -32,6 +32,12 @@ public struct PasswordCorrectCheckEvent : IEvent { }
 public struct FAcodeCorrectCheckEvent : IEvent { }
 public struct TwoFactorSubmitEvent : IEvent { public int Code; }
 
+public struct InMonitorEvent : IEvent { }
+
+public struct InternetDistractionEvent : IEvent { }
+
+public struct CatDistractionEvent : IEvent { }
+
 public struct IntegralTaskCompleteEvent : IEvent { }
 
 public struct FAnumberChosenEvent : IEvent { public int Number; }
