@@ -113,4 +113,9 @@ public class LevelLoader : MonoBehaviour
         if (blocker != null)
             blocker.blocksRaycasts = on;
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

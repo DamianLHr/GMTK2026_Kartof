@@ -5,15 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Temporary/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/Final/Menu.unity
     guid: 681b76a3600d33f4da4bc54c1bb9feae
   - enabled: 1
     path: Assets/Scenes/Final/Main.unity
-    guid: 43f9a8848f40e9e4eb1f912f046a02b3
+    guid: ba0b16ab12e86f8d6bc3b9e07f458a32
   - enabled: 1
     path: Assets/Scenes/Final/Loss Screen.unity
     guid: 933cb9183d509314caad0348c401281f
@@ -23,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/ConnectInternet.unity
     guid: a6846307ed8308623964d7818236917f
+  - enabled: 1
+    path: Assets/Scenes/Final/Comic.unity
+    guid: 125d33eae66ab364ca2249f460afa426
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
