@@ -26,7 +26,7 @@ public class FocusInteract : MonoBehaviour, IInteractable
     [SerializeField] private RenderTextureManager renderTextureManager;
 
     
-    public bool focused = false;
+    public static bool focused = false;
 
     private Vector3 originalWorldPos;
     private Quaternion originalWorldRot;
