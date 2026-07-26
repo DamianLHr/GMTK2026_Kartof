@@ -627,6 +627,33 @@ MonoBehaviour:
   y: e4fdffff1c020000
   minSpawnTime: 5
   maxSpawnTime: 10
+--- !u!1 &143127697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3704563456361051248, guid: fe9c3b11c1979f3788c567cf5fe1ed11, type: 3}
+  m_PrefabInstance: {fileID: 1813755449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &143127701
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143127697}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -9189612823058448048, guid: fe9c3b11c1979f3788c567cf5fe1ed11, type: 3}
 --- !u!1 &180576645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,7 +2083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb9700f98fd1ca4785e8688e2e0faef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementController3D
-  speed: 5
+  speed: 7
   jumpHeight: 2
   jumpCutMultiplier: 2
   gravity: -9.81
@@ -2514,7 +2541,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -10576,7 +10603,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -3704563456361051248, guid: fe9c3b11c1979f3788c567cf5fe1ed11, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 143127701}
   m_SourcePrefab: {fileID: 100100000, guid: fe9c3b11c1979f3788c567cf5fe1ed11, type: 3}
 --- !u!1 &1909520695
 GameObject:
@@ -11347,7 +11377,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
