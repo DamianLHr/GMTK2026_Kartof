@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 304627802}
   - component: {fileID: 304627801}
   m_Layer: 5
-  m_Name: Crdits
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,48 +266,77 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Credits
-
-
-    Team Kartof
-
-
-    Alexia
-
-    David
-
-    Damyan
-
-    Dan
-
-    Smarty
-
-    Vlad
+  m_text: 'Team Kartof:
 
     
 
-    Music
-
-    ***
-
-    
-
-    SFX
-
-    ***
+    Programming - David (Davidd), Damyan (damianhr),
+    Dan (Midas5665), Vlad (Bunger)
 
     
 
-    Fonts
-
-    Pico
-    8 - where
-
-    Pixelify Sans - Google Fonts
+    2D Art - Marte (smarty123)
 
     
 
-    other'
+    Pixel
+    Art - Vlad (Bunger)
+
+    
+
+    UI Design - Vlad (Bunger)
+
+    
+
+    Art Posters
+    - Alexia (ssvuet)
+
+    
+
+    3D Models - Dan (Midas5665), Marte (smarty123)
+
+    
+
+    3D
+    Rigging and Animations - Marte (smarty123)
+
+    
+
+    Sound Design - Dan (Midas5665)
+
+    
+
+    CREDITS
+    3RD PARTY ASSETS:
+
+    
+
+    Fonts:
+
+    
+
+    Pixelify Sans - Stefie Justprince
+
+    
+
+    Pico-8
+
+    
+
+    Music:
+
+    
+
+    The
+    Chase Begins - MMAudio
+
+    
+
+    Sound Effects:
+
+    
+
+    freesound_community '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cbf4256c47f35e043967ae406dd6e85b, type: 2}
   m_sharedMaterial: {fileID: 842578586325145016, guid: cbf4256c47f35e043967ae406dd6e85b, type: 2}
