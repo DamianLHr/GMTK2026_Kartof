@@ -393,7 +393,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
 --- !u!1 &105032649
@@ -2591,6 +2591,7 @@ GameObject:
   - component: {fileID: 1943933880}
   - component: {fileID: 1943933879}
   - component: {fileID: 1943933882}
+  - component: {fileID: 1943933883}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2716,6 +2717,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1943933883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943933878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d8f84c71a54934cbea7285b343e5b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AspectRatio
 --- !u!1 &1988553041
 GameObject:
   m_ObjectHideFlags: 0
