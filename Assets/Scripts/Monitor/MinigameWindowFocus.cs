@@ -44,11 +44,9 @@ public class MinigameWindowFocus : MonoBehaviour, IPointerEnterHandler, IPointer
     private void HandleMinigameFinished()
     {
         Debug.Log("Main Scene: Minigame finished signal received!");
-        
-        // Put whatever you want to happen here! Examples:
-        // - Unload the minigame scene: SceneManager.UnloadSceneAsync(minigameSceneName);
-        // - Close the window UI: gameObject.SetActive(false);
-        // - Give the player money/points in the main OS.
+        PuzzleOrchestrator.Internet = true;
+        UnloadMinigameScene();
+        Destroy(transform.parent.gameObject);
     }
     
     public void UnloadMinigameScene()

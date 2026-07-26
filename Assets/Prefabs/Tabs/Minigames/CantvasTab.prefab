@@ -2259,6 +2259,7 @@ GameObject:
   - component: {fileID: 3425385713169311942}
   - component: {fileID: 9003754015803421748}
   - component: {fileID: 2902956613353190399}
+  - component: {fileID: -4055293513106966265}
   m_Layer: 5
   m_Name: CantvasTab
   m_TagString: Untagged
@@ -2328,6 +2329,20 @@ MonoBehaviour:
   stateChangeDelay: 0.5
   Password: password
   FAcode: 67
+--- !u!114 &-4055293513106966265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4991737538768876037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb921a4e37d436fcbd909092c6421f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnError
+  errorTab: {fileID: 2218509861225729223, guid: ee0ff18b5ff769d97bb2bea906629303, type: 3}
+  text: No Internet
 --- !u!1 &5039765920544295027
 GameObject:
   m_ObjectHideFlags: 0
