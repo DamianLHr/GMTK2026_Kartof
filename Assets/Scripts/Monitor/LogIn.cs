@@ -12,7 +12,7 @@ public class LogIn : MonoBehaviour
     
     public void CheckPassword()
     {
-        if (inputField.text == "password")
+        if (inputField.text == "smartie")
         {
             mainCanvas.SetActive(true);
             bootupCanvas.SetActive(false);

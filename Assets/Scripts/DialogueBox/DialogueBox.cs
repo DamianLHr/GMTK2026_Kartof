@@ -7,8 +7,8 @@ public class DialogueBox : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public GameObject textBox;
-    [SerializeField] private float textSpeed = 0.05f;
-    [SerializeField] private float linePause = 1f;
+    [SerializeField] private float textSpeed = 0.03f;
+    [SerializeField] private float linePause = 10f;
 
     private string _bufferedLine = null;
     private string _currentLine = string.Empty;
@@ -37,7 +37,7 @@ public class DialogueBox : MonoBehaviour
     {
         if (_isTyping)
         {
-            _bufferedLine = line; // overwrite — only keep latest
+            _bufferedLine = line; // overwrite ï¿½ only keep latest
         }
         else
         {
