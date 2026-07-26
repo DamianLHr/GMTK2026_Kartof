@@ -17,6 +17,7 @@ public class PuzzleOrchestrator : MonoBehaviour
     public static bool RouterIDCorrect;
     public static bool CaptchaCorrect;
     public static bool Submitted;
+    public static bool Internet = true;
 
     private bool hasTriggeredWin = false;
     

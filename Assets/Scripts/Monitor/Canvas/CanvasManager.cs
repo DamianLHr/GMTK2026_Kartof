@@ -50,6 +50,15 @@ public class CanvasManager : MonoBehaviour
         EventBus<FAcodeCorrectCheckEvent>.Deregister(faCodeCorrectBinding);
     }
 
+    private void Update()
+    {
+        if (!PuzzleOrchestrator.Internet)
+        {
+            GetComponent<SpawnError>().Spawn();
+            Destroy(gameObject);
+        }
+    }
+
     private void OnPasswordCorrect()
     {
         PuzzleOrchestrator.PasswordCorrect = true;

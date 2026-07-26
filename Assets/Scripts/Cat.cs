@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour, IInteractable
 {
+    // Disclaimer
+    // This script has been written like ass
+    // I can be excused because I have only a few hours left
     [Header("Settings")]
     [Tooltip("The axis to track rotation around.")]
     public Vector3 rotationAxis = Vector3.up;

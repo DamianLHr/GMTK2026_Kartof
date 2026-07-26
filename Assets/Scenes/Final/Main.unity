@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 3454188}
   - component: {fileID: 3454189}
   - component: {fileID: 3454190}
+  - component: {fileID: 3454191}
   m_Layer: 0
   m_Name: Puzzle Initializer
   m_TagString: Untagged
@@ -164,11 +165,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 745b88ecb47d7954bac135e27c6fae7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleInitializer
-  difficulty: {fileID: 0}
+  difficulty: {fileID: 11400000, guid: 74843a7ae839dc0428f81c217d035934, type: 2}
   useFixedSeed: 0
   seed: 12345
   autoStartRun: 1
-  distractionPool: []
+  distractionPool:
+  - {fileID: 3454191}
   runDistractions: 1
 --- !u!114 &3454190
 MonoBehaviour:
@@ -185,6 +187,19 @@ MonoBehaviour:
   seed: 12345
   routerIDText: {fileID: 30987095}
   canvasPasswordText: {fileID: 461398474}
+--- !u!114 &3454191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3454187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c2cbe58aa7a942fa18db5ae4939f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  weight: 1
 --- !u!1 &5913328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3008,7 +3023,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2062455415}
+    m_TransformParent: {fileID: 1944627712}
     m_Modifications:
     - target: {fileID: -9205763919713720457, guid: c357b5bdd557d5143a8fc9845a413797, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7920,7 +7935,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2062455415}
+    m_TransformParent: {fileID: 1944627712}
     m_Modifications:
     - target: {fileID: -9205763919713720457, guid: c357b5bdd557d5143a8fc9845a413797, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13089,6 +13104,7 @@ GameObject:
   - component: {fileID: 725770124}
   - component: {fileID: 725770123}
   - component: {fileID: 725770122}
+  - component: {fileID: 725770126}
   m_Layer: 7
   m_Name: Icon (2)
   m_TagString: Untagged
@@ -13127,6 +13143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84858d51cacfa25ef92db1a19763a694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Icon
+  internetTab: 1
   tabPrefab: {fileID: 4991737538768876037, guid: f95e33f333ea43d42bb0b48d1d43a14d, type: 3}
   lowPriorityGroup: {fileID: 124166445}
 --- !u!114 &725770123
@@ -13223,6 +13240,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725770120}
   m_CullTransparentMesh: 1
+--- !u!114 &725770126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725770120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb921a4e37d436fcbd909092c6421f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnError
+  errorTab: {fileID: 2218509861225729223, guid: ee0ff18b5ff769d97bb2bea906629303, type: 3}
+  text: No Internet
 --- !u!1 &726569263
 GameObject:
   m_ObjectHideFlags: 0
@@ -19187,6 +19218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84858d51cacfa25ef92db1a19763a694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Icon
+  internetTab: 0
   tabPrefab: {fileID: 2218509861225729223, guid: 78711d09fce69e092969756b6f0433c5, type: 3}
   lowPriorityGroup: {fileID: 124166445}
 --- !u!114 &1172899887
@@ -21460,6 +21492,7 @@ GameObject:
   - component: {fileID: 1909930667}
   - component: {fileID: 1909930666}
   - component: {fileID: 1909930665}
+  - component: {fileID: 1909930669}
   m_Layer: 7
   m_Name: Icon
   m_TagString: Untagged
@@ -21554,6 +21587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84858d51cacfa25ef92db1a19763a694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  internetTab: 0
   tabPrefab: {fileID: 2218509861225729223, guid: f305556be18d46b4cbf921a77b296a99, type: 3}
   lowPriorityGroup: {fileID: 124166445}
 --- !u!114 &1909930667
@@ -21594,6 +21628,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909930663}
   m_CullTransparentMesh: 1
+--- !u!114 &1909930669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909930663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb921a4e37d436fcbd909092c6421f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnError
+  errorTab: {fileID: 2218509861225729223, guid: ee0ff18b5ff769d97bb2bea906629303, type: 3}
+  text: No Internet
+--- !u!1 &1944627711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1944627712}
+  - component: {fileID: 1944627713}
+  m_Layer: 0
+  m_Name: CatDistraction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1944627712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944627711}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 511367830}
+  - {fileID: 598089310}
+  m_Father: {fileID: 2062455415}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1944627713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944627711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6668acb41bcb9c6ab75b140c144be13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  weight: 1
 --- !u!1 &1962040194
 GameObject:
   m_ObjectHideFlags: 0
@@ -22081,8 +22176,7 @@ Transform:
   - {fileID: 351981362}
   - {fileID: 352703511}
   - {fileID: 556280411}
-  - {fileID: 598089310}
-  - {fileID: 511367830}
+  - {fileID: 1944627712}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093773701
