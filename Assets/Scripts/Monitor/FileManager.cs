@@ -37,8 +37,8 @@ public class FileManager : MonoBehaviour
                 currentFiles[i].name = specialText;
 
                 Button button = currentFiles[i].GetComponent<Button>();
-
-                button.onClick.RemoveAllListeners();
+                
+                button.onClick = new Button.ButtonClickedEvent();
 
                 CorrectFile fileScript = currentFiles[i].GetComponent<CorrectFile>();
 
@@ -46,7 +46,7 @@ public class FileManager : MonoBehaviour
                 {
                     fileScript = currentFiles[i].AddComponent<CorrectFile>();
                 }
-                
+    
                 button.onClick.AddListener(fileScript.Spawn);
             }
             else

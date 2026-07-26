@@ -276,7 +276,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5167593752610447205}
         m_TargetAssemblyTypeName: SpawnError, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
