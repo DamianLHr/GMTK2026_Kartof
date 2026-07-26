@@ -25,7 +25,8 @@ public class FocusInteract : MonoBehaviour, IInteractable
     [SerializeField] private MovementController3D movementController;
     [SerializeField] private RenderTextureManager renderTextureManager;
 
-    private bool focused = false;
+    
+    public bool focused = false;
 
     private Vector3 originalWorldPos;
     private Quaternion originalWorldRot;
@@ -59,6 +60,26 @@ public class FocusInteract : MonoBehaviour, IInteractable
         {
             focused = false;
 
+            if (glideCoroutine != null) StopCoroutine(glideCoroutine);
+            glideCoroutine = StartCoroutine(Glide(
+                originalWorldPos,
+                originalWorldRot,
+                swapProgress: exitSwapProgress,
+                onSwap: () => renderTextureManager.ChangeToRoom(),
+                onComplete: () =>
+                {
+                    targetCamera.transform.SetParent(originalParent, true);
+                    movementController.enabled = true;
+                }
+            ));
+        }
+    }
+
+    public void UnFocus()
+    {
+        if (focused)
+        {
+            focused = false;
             if (glideCoroutine != null) StopCoroutine(glideCoroutine);
             glideCoroutine = StartCoroutine(Glide(
                 originalWorldPos,
