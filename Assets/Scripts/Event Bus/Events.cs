@@ -34,7 +34,7 @@ public struct TwoFactorSubmitEvent : IEvent { public int Code; }
 
 public struct InternetDistractionEvent : IEvent { }
 
-public struct PickedUpCatEvent : IEvent { }
+public struct CatDistractionEvent : IEvent { }
 
 public struct IntegralTaskCompleteEvent : IEvent { }
 
