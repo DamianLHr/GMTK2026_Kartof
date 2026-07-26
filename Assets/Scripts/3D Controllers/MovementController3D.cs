@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -50,6 +51,13 @@ public class MovementController3D : MonoBehaviour
 
     public bool releaseMouse = false;
 
+    [SerializeField] private SFXConfiguration footstep1;
+    [SerializeField] private SFXConfiguration footstep2;
+
+    [SerializeField] private SFXConfiguration footstep3;
+
+    private int stepCount =0;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -77,6 +85,20 @@ public class MovementController3D : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
+        if(stepCount == 0)
+        {
+            AudioManager.Instance.PlaySFX(footstep1, 1f);
+            stepCount++;
+        } else if ( stepCount == 1)
+        {
+            AudioManager.Instance.PlaySFX(footstep2, 1f);
+            stepCount++;
+        } else
+        {
+            AudioManager.Instance.PlaySFX(footstep3, 1f);
+            stepCount = 0;
+        }
+
     }
 
     public void OnLook(InputAction.CallbackContext context)

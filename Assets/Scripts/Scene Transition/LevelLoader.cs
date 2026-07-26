@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent]
@@ -13,6 +14,11 @@ public class LevelLoader : MonoBehaviour
 
     [Tooltip("Optional. Swallows clicks while the transition is covering the screen.")]
     [SerializeField] private CanvasGroup blocker;
+
+    [SerializeField] private ThemeConfiguration menuTheme;
+    [SerializeField] private ThemeConfiguration playTheme;
+    [SerializeField] private ThemeConfiguration winANDComicTheme;
+    [SerializeField] private ThemeConfiguration loseTheme;
 
     private bool useLock = false;
 
@@ -55,7 +61,22 @@ public class LevelLoader : MonoBehaviour
             Debug.LogError($"[LevelLoader] Scene '{sceneName}' is not in Build Settings.", this);
             return;
         }
-
+        if(sceneName == "Main")
+        {
+            AudioManager.Instance.PlayTheme(playTheme,1f, true);
+        } else if (sceneName == "Menu") {
+            AudioManager.Instance.PlayTheme(menuTheme,1f, true);
+        } else if (sceneName == "LossScene")
+        {
+            AudioManager.Instance.PlayTheme(loseTheme,1f, true);
+        } else if (sceneName == "WinScene")
+        {
+            AudioManager.Instance.PlayTheme(winANDComicTheme,1f, true);
+        } else if (sceneName == "ComicScene")
+        {
+            AudioManager.Instance.PlayTheme(winANDComicTheme,1f, true);
+        }
+        AudioManager.Instance.PlayTheme(winANDComicTheme,1f, true);
         StartCoroutine(LoadLevelRoutine(() => SceneManager.LoadSceneAsync(sceneName)));
     }
 
@@ -103,6 +124,7 @@ public class LevelLoader : MonoBehaviour
 
         while (!op.isDone)
             yield return null;
+
 
         SetBlocking(false);
         useLock = false;

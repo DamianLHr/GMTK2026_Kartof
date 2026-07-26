@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class PhoneUIController : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class PhoneUIController : MonoBehaviour
     [SerializeField] private GameObject WideEyesCatIcon;
     [SerializeField] private GameObject BlinkingCatIcon;
 
-    private float frame1Duration = 2.5f;
+    private float frame1Duration = 1f;
     private float frame2Duration = 0.2f;
     private Coroutine blinkingAnimation;
     private bool isAnimating = false;
@@ -38,6 +39,12 @@ public class PhoneUIController : MonoBehaviour
     EventBinding<FAnumberChosenEvent> phone2FAeventBinding;
     EventBinding<correctNumberEvent> correctNumber2FAEventBinding;
 
+    [SerializeField] private SFXConfiguration correctSound;
+    [SerializeField] private SFXConfiguration wrongSound;
+    [SerializeField] private SFXConfiguration buttonPress;
+    [SerializeField] private SFXConfiguration notification;
+    
+    [SerializeField] private SFXConfiguration codeShowSound;
     private void Awake()
     {   
         timerPanel.SetActive(false);
@@ -100,6 +107,7 @@ public class PhoneUIController : MonoBehaviour
 
         if (!isPhoneOpen) return; // same rule the notification had — only while the phone is up
         SetCursorState(true);
+        AudioManager.Instance.PlaySFX(codeShowSound, 1f);
 
         int decoyA = GenerateDecoy(correctNumber);
         int decoyB = GenerateDecoy(correctNumber, decoyA);
@@ -120,11 +128,13 @@ public class PhoneUIController : MonoBehaviour
     }
 
     private void OnCodeButtonClicked(int number)
-    {
+    {   
+        AudioManager.Instance.PlaySFX(buttonPress, 1f);
         if (number == correctNumber)
         {
             EventBus<TwoFactorSubmitEvent>.Raise(new TwoFactorSubmitEvent{Code = correctNumber});
             Debug.Log("Correct number was chosen");
+            AudioManager.Instance.PlaySFX(correctSound, 1f);
             HideCodePanel();
             triggered2FA = false;
             //SetCursorState(false);
@@ -132,6 +142,7 @@ public class PhoneUIController : MonoBehaviour
         else
         {
             // Wait 5 seconds if the wrong button is pressed
+            AudioManager.Instance.PlaySFX(wrongSound, 1f);
             StartCoroutine(Countdown(5));
         }
     }
@@ -161,7 +172,8 @@ public class PhoneUIController : MonoBehaviour
     }
 
     private void handle2FAEvent(int number)
-    {
+    {   
+        AudioManager.Instance.PlaySFX(notification, 1f);
         triggered2FA = true;
         correctNumber = number;
         if (isPhoneOpen)
