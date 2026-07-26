@@ -170,7 +170,9 @@ MonoBehaviour:
   seed: 12345
   autoStartRun: 1
   distractionPool:
+  - {fileID: 124166447}
   - {fileID: 3454191}
+  - {fileID: 1944627713}
   runDistractions: 1
 --- !u!114 &3454190
 MonoBehaviour:
@@ -199,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c2cbe58aa7a942fa18db5ae4939f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  weight: 1
+  weight: 0.6
 --- !u!1 &5913328
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,14 +773,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f664a74714bd0ceabac37af48fa3ef8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  weight: 0.8
   popUpPrefabs:
   - {fileID: 2218509861225729223, guid: 235ccce4523b1fee3a94c64027ddac4b, type: 3}
   - {fileID: 2218509861225729223, guid: 7f27125edb233b1c7bd7f83a092bc3ec, type: 3}
   - {fileID: 2218509861225729223, guid: 3ea2a624696f455338d1b6a0f2d79120, type: 3}
   x: 40fcffffc0030000
   y: e4fdffff1c020000
-  minSpawnTime: 5
-  maxSpawnTime: 10
+  burstCount: 10
 --- !u!1001 &126540000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21688,7 +21690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6668acb41bcb9c6ab75b140c144be13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  weight: 1
+  weight: 0.7
 --- !u!1 &1962040194
 GameObject:
   m_ObjectHideFlags: 0
@@ -21701,6 +21703,7 @@ GameObject:
   - component: {fileID: 1962040196}
   - component: {fileID: 1962040198}
   - component: {fileID: 1962040195}
+  - component: {fileID: 1962040199}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -21827,6 +21830,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962040194}
   m_Enabled: 1
+--- !u!114 &1962040199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962040194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d8f84c71a54934cbea7285b343e5b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AspectRatio
 --- !u!4 &1993604346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -163066445757010894, guid: c357b5bdd557d5143a8fc9845a413797, type: 3}
@@ -22340,23 +22355,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalScale.z
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22388,11 +22403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 150
+      value: 183
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 200
+      value: 205
       objectReference: {fileID: 0}
     - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -22406,6 +22421,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 162022116139308061, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1745479742792185207, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: m_Name
       value: Timer
@@ -22416,7 +22435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5175080041895487841, guid: 94e99292c2888794496002e9d3a82f54, type: 3}
       propertyPath: startCount
-      value: 10000
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

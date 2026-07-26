@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyProfile
   secondsPerCount: 1
-  distractionCount: 3
+  distractionCount: 5
   distractionInterval: {x: 6, y: 12}
-  distractionIntensity: 0
+  distractionIntensity: 0.361
